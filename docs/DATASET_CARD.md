@@ -7,7 +7,7 @@ This document provides a comprehensive overview of the self-collected and self-l
 *   **Target Object:** Mobile Phone (specifically a Techno Spark 6 Go with a protective phone case)
 *   **Target Class:** `phone` (ID: 1)
 *   **Total Images:** 116 images
-*   **Image Resolution:** $4080 \times 3072$ pixels (captured using a smartphone camera)
+*   **Image Resolution:** $4080 \times 3072$ pixels (captured using a **Redmi 14 Pro** smartphone camera)
 *   **Annotation Type:** Polygon segmentation masks (per-pixel contours)
 
 ---

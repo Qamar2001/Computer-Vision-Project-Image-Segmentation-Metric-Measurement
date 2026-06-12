@@ -10,6 +10,7 @@ build/
 
 # Virtual Environment
 venv/
+.venv/
 env/
 .env
 
@@ -18,6 +19,7 @@ env/
 .idea/
 *.swp
 *.swo
+.gemini/
 
 # OS
 Thumbs.db
@@ -27,13 +29,24 @@ desktop.ini
 # Model weights (too large for git)
 models/output/*.pth
 models/output/*.pkl
-models/output/model_final.*
 *.onnx
 
-# Large dataset images (tracked via Git LFS or excluded)
-# Keeping images in repo for this assessment
-# calibration/*.jpg
-# dataset/**/*.jpg
+# Training intermediates (not needed in repo)
+models/output/events.out.tfevents.*
+models/output/last_checkpoint
+models/output/coco_instances_results.json
+models/output/instances_predictions.pth
+models/output/metrics.json
+models/output/training_losses.json
+models/output/visualizations/
+
+# Measurement demo outputs (generated, not source)
+measurement/outputs/*.jpg
+measurement/outputs/*.json
+
+# Inference outputs (generated, not source)
+inference/outputs/*.jpg
+inference/outputs/*.json
 
 # Jupyter
 .ipynb_checkpoints/

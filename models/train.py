@@ -73,8 +73,11 @@ class LossLogger(HookBase):
     
     def after_step(self):
         if self.trainer.iter % 20 == 0:
-            loss_dict = {k: v.item() for k, v in self.trainer.storage.latest().items() 
-                        if 'loss' in k.lower()}
+            loss_dict = {}
+            for k, v in self.trainer.storage.latest().items():
+                if 'loss' in k.lower():
+                    val = v[0]
+                    loss_dict[k] = val.item() if hasattr(val, 'item') else val
             total_loss = sum(loss_dict.values())
             self.losses.append({
                 "iteration": self.trainer.iter,
@@ -126,7 +129,7 @@ def build_config():
     cfg.DATASETS.TEST = ("phone_val",)
     
     # DataLoader
-    cfg.DATALOADER.NUM_WORKERS = 2
+    cfg.DATALOADER.NUM_WORKERS = 0
     
     # Solver / Training hyperparameters
     cfg.SOLVER.IMS_PER_BATCH = 2          # Batch size (2 for 6GB VRAM)
@@ -256,7 +259,7 @@ def main():
     print(f"CUDA available: {torch.cuda.is_available()}")
     if torch.cuda.is_available():
         print(f"GPU: {torch.cuda.get_device_name(0)}")
-        print(f"VRAM: {torch.cuda.get_device_properties(0).total_mem / 1024**3:.1f} GB")
+        print(f"VRAM: {torch.cuda.get_device_properties(0).total_memory / 1024**3:.1f} GB")
     
     # Step 1: Register datasets
     register_datasets()

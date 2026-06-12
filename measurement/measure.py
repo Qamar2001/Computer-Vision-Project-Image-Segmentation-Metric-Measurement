@@ -110,7 +110,7 @@ def compute_pixels_per_mm_from_calibration(camera_matrix, dist_coeffs, square_si
         
         # Estimate working distance from image (approximate)
         # This is a fallback — document that checkerboard reference is preferred
-        estimated_distance_mm = 400  # ~40cm working distance assumption
+        estimated_distance_mm = 165.0  # ~16.5cm working distance to match close-up dataset images
         pixels_per_mm = focal_px / estimated_distance_mm
         
         print(f"  No checkerboard in image — using focal length estimation.")

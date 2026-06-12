@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual Environment
+venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Model weights (too large for git)
+models/output/*.pth
+models/output/*.pkl
+models/output/model_final.*
+*.onnx
+
+# Large dataset images (tracked via Git LFS or excluded)
+# Keeping images in repo for this assessment
+# calibration/*.jpg
+# dataset/**/*.jpg
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+wandb/
+
+# Temporary
+*.tmp
+scratch/

@@ -38,7 +38,7 @@ models/output/coco_instances_results.json
 models/output/instances_predictions.pth
 models/output/metrics.json
 models/output/training_losses.json
-models/output/visualizations/
+# models/output/visualizations/
 
 # Measurement demo outputs (generated, not source)
 # measurement/outputs/*.jpg

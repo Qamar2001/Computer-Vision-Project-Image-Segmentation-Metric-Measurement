@@ -41,11 +41,11 @@ models/output/training_losses.json
 models/output/visualizations/
 
 # Measurement demo outputs (generated, not source)
-measurement/outputs/*.jpg
+# measurement/outputs/*.jpg
 measurement/outputs/*.json
 
 # Inference outputs (generated, not source)
-inference/outputs/*.jpg
+# inference/outputs/*.jpg
 inference/outputs/*.json
 
 # Jupyter

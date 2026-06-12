@@ -1,4 +1,4 @@
-# XIS AI Assessment — Phone Segmentation & Metric Measurement Pipeline
+# Phone Segmentation & Metric Measurement Pipeline
 
 ## Project Overview
 

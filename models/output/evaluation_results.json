@@ -1,0 +1,49 @@
+{
+  "validation": {
+    "bbox": {
+      "AP": 97.16153680585451,
+      "AP50": 100.0,
+      "AP75": 100.0,
+      "APs": NaN,
+      "APm": NaN,
+      "APl": 97.16153680585451
+    },
+    "segm": {
+      "AP": 100.0,
+      "AP50": 100.0,
+      "AP75": 100.0,
+      "APs": NaN,
+      "APm": NaN,
+      "APl": 100.0
+    }
+  },
+  "test": {
+    "bbox": {
+      "AP": 98.77062706270627,
+      "AP50": 100.0,
+      "AP75": 100.0,
+      "APs": NaN,
+      "APm": NaN,
+      "APl": 98.77062706270627
+    },
+    "segm": {
+      "AP": 100.0,
+      "AP50": 100.0,
+      "AP75": 100.0,
+      "APs": NaN,
+      "APm": NaN,
+      "APl": 100.0
+    }
+  },
+  "config": {
+    "architecture": "Mask R-CNN R50-FPN",
+    "pretrained": "COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x",
+    "batch_size": 2,
+    "learning_rate": 0.0025,
+    "max_iterations": 3000,
+    "num_classes": 1,
+    "class_names": [
+      "phone"
+    ]
+  }
+}

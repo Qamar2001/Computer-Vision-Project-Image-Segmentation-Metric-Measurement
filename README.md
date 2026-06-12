@@ -12,37 +12,7 @@ End-to-end computer vision pipeline that segments a **Techno Spark 6 Go** smartp
 ---
 
 ## System Architecture (End-to-End Pipeline)
-
-```mermaid
-flowchart TD
-    subgraph Step1["Step 1 — Camera Calibration & Data Collection"]
-        A["Capture 34 Checkerboard Images\n(Redmi 14 Pro camera)"] --> B["Detect Corners\ncv2.findChessboardCorners"]
-        B --> C["Compute Intrinsic Matrix K\n& Distortion Coefficients"]
-        C --> D["Save calibration_params.json"]
-        E["Collect 116 Phone Images\n(Techno Spark 6 Go)"] --> F["Label with CVAT\n(Polygon Masks, COCO Format)"]
-        F --> G["Split 70/20/10\n(81 Train / 23 Val / 12 Test)"]
-        D --> H["Undistort All Images\ncv2.undistort"]
-        G --> H
-    end
-
-    subgraph Step2["Step 2 — Model Training & Segmentation"]
-        H --> I["Train Mask R-CNN\n(ResNet-50-FPN, Detectron2)"]
-        I --> J["Evaluate on Val & Test Sets\n(mAP, IoU, Loss Curves)"]
-        J --> K["Save model_final.pth"]
-    end
-
-    subgraph Step3["Step 3 — Pixel-to-MM Measurement"]
-        L["New Raw Image"] --> M["Undistort Image\n(Calibration Params)"]
-        M --> N["Detect Reference Object\n(Checkerboard → pixels_per_mm)"]
-        M --> O["Run Mask R-CNN Inference\n(Segment Phone)"]
-        N --> P["Convert Pixel Dims → mm\nW_mm = W_px / pixels_per_mm"]
-        O --> P
-        P --> Q["Output: Annotated Image\nWidth mm, Height mm, Confidence"]
-    end
-
-    Step1 --> Step2
-    Step2 --> Step3
-```
+![End-to-End Pipeline Diagram](docs/End-to-End%20Pipeline%20Diagram.jpg)
 
 ---
 

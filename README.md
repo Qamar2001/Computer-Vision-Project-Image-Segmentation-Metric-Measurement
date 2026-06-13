@@ -12,7 +12,9 @@ End-to-end computer vision pipeline that segments a **Techno Spark 6 Go** smartp
 ---
 
 ## System Architecture (End-to-End Pipeline)
+
 ![End-to-End Pipeline Diagram](docs/End-to-End%20Pipeline%20Diagram.jpg)
+
 
 ---
 
@@ -106,5 +108,3 @@ project-root/
 3. **Transfer Learning**: With only 116 images, training from scratch would overfit. Fine-tuning COCO-pretrained weights allows the model to leverage features learned from millions of images.
 4. **Oriented Bounding Box**: Using `cv2.minAreaRect()` on the segmentation mask provides rotation-invariant width/height measurements, more accurate than axis-aligned boxes.
 
-## Author
-XIS AI Assessment Candidate
